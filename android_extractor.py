@@ -74,7 +74,7 @@ def create_output_directories():
     return framework_dir
 
 def main():
-    # List of project paths
+    # List of project paths replace with your own
     project_paths = [
         '/Users/somto/AndroidStudioProjects/NounHub',
         '/Users/somto/AndroidStudioProjects/NounHub/shared',
