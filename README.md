@@ -22,6 +22,7 @@ A collection of code extractors for different frameworks that help analyze and e
 
 - Android (Kotlin)
 - Flutter (Dart)
+- React/Next.js
 - [More frameworks to be added]
 
 ## Usage

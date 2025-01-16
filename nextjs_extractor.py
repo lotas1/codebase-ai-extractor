@@ -113,7 +113,8 @@ def create_output_directories():
 def main():
     project_paths = [
         # Add your Next.js project paths here
-        '/Users/somto/VsCodeProjects/auth-test'
+        '/Users/somto/VsCodeProjects/auth-test',
+        '/Users/somto/VsCodeProjects/mockprep'
     ]
 
     framework_dir = create_output_directories()
