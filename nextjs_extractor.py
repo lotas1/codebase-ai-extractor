@@ -45,8 +45,13 @@ def extract_components_and_functions(content):
     
     return components, hooks
 
+def clean_whitespace(content):
+    """Completely strips all whitespace from content"""
+    return ''.join(content.split())
+
 def process_file(file_path, project_path):
     content = extract_text_from_file(file_path)
+    cleaned_content = clean_whitespace(content)
     if not content:
         return None
 
@@ -61,7 +66,7 @@ def process_file(file_path, project_path):
         "imports": imports,
         "components": components,
         "hooks": hooks,
-        "content": content
+        "content": cleaned_content
     }
 
 def extract_text_from_project(project_path):

@@ -24,6 +24,10 @@ def is_test_file(file_path, content):
     ]
     return any(indicator in file_path or indicator in content for indicator in test_indicators)
 
+def clean_whitespace(content):
+    """Completely strips all whitespace from content"""
+    return ''.join(content.split())
+
 def process_file(file_path, project_path):
     content = extract_text_from_file(file_path)
     if not content or is_test_file(file_path, content):
@@ -31,10 +35,11 @@ def process_file(file_path, project_path):
 
     relative_path = os.path.relpath(file_path, project_path)
     content_without_imports = remove_imports(content)
+    cleaned_content = clean_whitespace(content_without_imports)
 
     return {
         "file_path": relative_path,
-        "content": content_without_imports
+        "content": cleaned_content
     }
 
 def extract_text_from_project(project_path):
